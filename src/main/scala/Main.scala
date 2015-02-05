@@ -5,17 +5,22 @@ import akka.actor.{Props, ActorSystem}
  */
 object Main {
   import Messages._
+  import Methods._
 
   def indeks(plik: String): List[(String, List[Int])] = {
     val sys = ActorSystem("system")
-    val mainActor = sys.actorOf(Props[MainActor], "MainActor")
+    val mainActor = sys.actorOf(Props[MainActor], "MainActor&")
 
-    mainActor ! Start("test.txt")
+    mainActor ! Start(plik)
 
     List[(String, List[Int])]()
   }
 
   def main(args: Array[String]): Unit = {
-    indeks("tekst.txt")
+
+    println(codeWord("adąś"))
+    println(decodeWord("ada#s#"))
+
+    indeks("test.txt")
   }
 }

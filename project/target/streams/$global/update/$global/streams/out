@@ -26,7 +26,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#index-akka-build;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#index-akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@72e1378d[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@25f2ac2[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.10.4] org.scala-lang#scala-library;2.10.4[0m
@@ -1388,7 +1388,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.6!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1270ms :: artifacts dl 38ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1221ms :: artifacts dl 35ms[0m
 [0m[[0mdebug[0m] [0m	report for default#index-akka-build;0.1-SNAPSHOT compile produced in C:\Scala\index-akka\project\target\resolution-cache\reports\default-index-akka-build-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#index-akka-build;0.1-SNAPSHOT runtime produced in C:\Scala\index-akka\project\target\resolution-cache\reports\default-index-akka-build-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#index-akka-build;0.1-SNAPSHOT test produced in C:\Scala\index-akka\project\target\resolution-cache\reports\default-index-akka-build-test.xml[0m
@@ -1402,5 +1402,5 @@
 [0m[[0mdebug[0m] [0m	report for default#index-akka-build;0.1-SNAPSHOT docs produced in C:\Scala\index-akka\project\target\resolution-cache\reports\default-index-akka-build-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#index-akka-build;0.1-SNAPSHOT pom produced in C:\Scala\index-akka\project\target\resolution-cache\reports\default-index-akka-build-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#index-akka-build;0.1-SNAPSHOT scala-tool produced in C:\Scala\index-akka\project\target\resolution-cache\reports\default-index-akka-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1270ms resolve - 38ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (1221ms resolve - 35ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
