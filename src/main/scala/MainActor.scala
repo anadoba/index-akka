@@ -31,15 +31,17 @@ var lineCounter: AtomicInteger = new AtomicInteger(0)
       for (line <- txtfile.getLines) {
         //println(line.split("\\W+").toList)
         //val wordsInLine = line.split("[a-zA-Ząćęłńóśźż]+").toList
-        val wordsInLine = line.split("\\W+").toList
-        val resultFromLine = for (word <- wordsInLine) yield word.toLowerCase
+        //val wordsInLine = line.split("\\W+").toList
+        val regex = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+".r
+
+        val resultFromLine = regex.findAllIn(line.toLowerCase)
 
         for (word <- resultFromLine) {
 
            // Timeout for the resolveOne call
           implicit val timeout = Timeout(3, TimeUnit.SECONDS)
 
-          system.actorSelection("akka://system/user/MainActor/" + codeWord(word)).resolveOne().onComplete {
+          system.actorSelection(ActorPath.fromString("akka://system/user/MainActor/" + codeWord(word))).resolveOne().onComplete {
 
             case Success(actor) =>
               // if it exists then add occurence

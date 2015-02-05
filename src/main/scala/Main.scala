@@ -19,7 +19,7 @@ object Main {
   def main(args: Array[String]): Unit = {
 
     println(codeWord("adąś"))
-    println(decodeWord("ada#s#"))
+    println(decodeWord("ada#s# \n------------"))
 
     indeks("test.txt")
   }
