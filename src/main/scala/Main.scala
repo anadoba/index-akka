@@ -9,7 +9,7 @@ object Main {
 
   def indeks(plik: String): List[(String, List[Int])] = {
     val sys = ActorSystem("system")
-    val mainActor = sys.actorOf(Props[MainActor], "MainActor&")
+    val mainActor = sys.actorOf(Props[MainActor], "MainActor")
 
     mainActor ! Start(plik)
 

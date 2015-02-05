@@ -26,13 +26,11 @@ var lineCounter: AtomicInteger = new AtomicInteger(0)
   def StartIndexing(): Receive = {
     case Start(filename) =>
       val txtfile = scala.io.Source.fromFile(filename, "UTF-8")
-      // val words = txtfile.getLines.flatMap(_.split("\\W+")).toList
 
 
       for (line <- txtfile.getLines) {
         //println(line.split("\\W+").toList)
-        //val wordsInLine = line.split("\\s").toList
-        //val wordsInLine = line.split("[\\p{Lu}\\p{Ll}]+$").toList
+        //val wordsInLine = line.split("[a-zA-Ząćęłńóśźż]+").toList
         val wordsInLine = line.split("\\W+").toList
         val resultFromLine = for (word <- wordsInLine) yield word.toLowerCase
 
@@ -41,7 +39,7 @@ var lineCounter: AtomicInteger = new AtomicInteger(0)
            // Timeout for the resolveOne call
           implicit val timeout = Timeout(3, TimeUnit.SECONDS)
 
-          system.actorSelection(ActorPath.fromString("akka://system/user/MainActor&/" + word)).resolveOne().onComplete {
+          system.actorSelection("akka://system/user/MainActor/" + codeWord(word)).resolveOne().onComplete {
 
             case Success(actor) =>
               // if it exists then add occurence
@@ -50,7 +48,7 @@ var lineCounter: AtomicInteger = new AtomicInteger(0)
 
             case Failure(ex) =>
               // if actor doesnt exist then add it
-              val countingActor = context.actorOf(Props[Counter], word)
+              val countingActor = context.actorOf(Props[Counter], codeWord(word))
               countingActor ! InitCounter(word, lineCounter.get())
               println("Actor created for: " + countingActor.path)
           }
